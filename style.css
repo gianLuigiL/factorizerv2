@@ -1,0 +1,221 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Patua+One');
+@import url('https://fonts.googleapis.com/css?family=Asap&text=GethFacorsSpndRl!');
+/* CSS Document for the Big Factors Finder*/
+* {
+	padding: 0px;
+	margin: 0px;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color:  transparent; 
+}
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+html {
+	height: 100%;
+}
+body {
+	background: url(./background.png) no-repeat center center fixed;
+	background-size: cover;
+	height: 100%;
+}
+main {
+	display: webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 10px;
+	width: 100%;
+	max-width: 640px;
+	margin: auto;
+	font-family: 'Patua One', Arial, Helvetica, sans-serif;
+}
+main img{
+	height: 300px;
+	width: 300px;
+}
+main form {
+	flex: 1 1 100%;
+	max-width: 100%;
+	display: webkit-flex;
+	display: flex;
+	-webkit-flex-flow: row wrap;
+	flex-flow: row wrap;
+	justify-content: center;
+	padding: 10px;
+}
+main form input{
+	width: 100%;
+	height: 50px;
+	border: 4px solid black;
+	font-size: 2em;
+	font-family: 'Patua One', Arial, Helvetica, sans-serif;
+	text-align: center;
+}
+main form input:disabled{
+	border: 4px solid rgba(255,255,255,1.00);
+	color: rgba(139,139,139,1.00);
+	background-color: rgba(222,222,222,1.00);
+}
+main form label{
+	position: relative;
+}
+main form label.disabled::after{
+	content: "";
+	height: 4px;
+	width: 4px;
+	background-color: #6CACD7;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	animation: circle 5s infinite;
+}
+@keyframes circle {
+	0% {
+		height: 4px;
+		width: 4px;
+		bottom: 0px;
+		left: 0px;
+	}
+	13% {
+		height: 4px;
+		width: 100%;
+		bottom: 0px;
+		left: 0px;
+	}
+	25% {
+		height: 4px;
+		width: 4px;
+		bottom: 0px;
+		left: 99%;
+	}
+	38% {
+		height: 100%;
+		width: 4px;
+		bottom: 0px;
+		left: 99%;
+	}
+	50% {
+		height: 4px;
+		width: 4px;
+		bottom: 92%;
+		left: 99%;
+	}
+	63% {
+		height: 4px;
+		width: 100%;
+		bottom: 92%;
+		left: 0%;
+	}
+	75% {
+		height: 4px;
+		width: 4px;
+		bottom: 92%;
+		left: 0%;
+	}
+	87% {
+		height: 100%;
+		width: 4px;
+		bottom: 0%;
+		left: 0%;
+	}
+	100% {
+		height: 4px;
+		width: 4px;
+		bottom: 0%;
+		left: 0%;
+	}
+}
+main form span{
+	flex: 1 1 100%;
+	margin: 10px;
+	text-align: center;
+	font-size: 1.2em;
+}
+main form span#hint{
+	color: red;
+}
+main div#loadBar {
+	flex: 1 1 100%;
+	max-width: 450px;
+	height: 30px;
+	margin: 5px;
+	border-radius: 5px;
+	padding: 1px;
+	border: 2px solid black;
+	background-color: rgba(255,255,255,0.5);
+	overflow: hidden;
+	display: none;
+	position: relative;
+}
+main div#loadBar div#loadStatus {
+	height: 100%;
+	background-color: blue;
+	width: 0%;
+    border: 1px solid #2980b9;
+    border-radius: 3px;
+	background-image: 
+	repeating-linear-gradient(
+	  -45deg,
+	  #6CACD7,
+	  #6CACD7 11px,
+	  #eee 10px,
+	  #eee 20px /* determines size */
+	);
+	background-size: 28px 28px;
+	animation: move .5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 28px 0;
+  }
+}
+main div#loadBar p#percentage {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 3px;
+}
+main button {
+	flex: 1 1 100%;
+	max-width: 200px;
+	padding: 10px;
+	margin: 10px;
+	background: linear-gradient(to right,#DAAAAA, rgba(126,228,155,1.00) );
+	border: none;
+	box-shadow: 0px 0px 10px;
+	font-size: 1.3em;
+	font-family: Asap, 'Patua One', Arial, Helvetica, sans-serif;
+	font-weight: 900;
+	border-radius: 5px;
+	transition: color 0.5s;
+}
+main button:hover {
+	color: white;
+}
+main button#reload {
+	display: none;
+}
+div#factors {
+	padding: 3px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.2em;
+}
+div#factors span.factor {
+	display: inline-block;
+	margin: 3px;
+	background-color: rgba(196,196,196,0.50);
+	box-shadow: 0px 0px 3px inset;
+	padding: 5px;
+}
+@media screen and (max-width: 600px){
+	main img{
+		height: 150px;
+		width: 150px;
+	}
+}

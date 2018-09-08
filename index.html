@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Factors Finder</title>
+	<meta name="description" content="Factorization and Prime Numbers">
+	<meta name="keywords" content="factors, numbers, prime, factorization, big">
+	<meta name="author" content="Gian Luigi Lamera">
+	<meta name="viewport" content="width=device-width, initial-scale=1.00">
+	<link rel="icon" type="image/png" href="./favico/favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="./favico/favicon-16x16.png" sizes="16x16" />
+	<link href="style.css" rel="stylesheet">
+	<script defer src="factors.js"></script>
+</head>
+
+<body>
+<main>
+		<a href="http://gianluigilamera.info/factorizer"><img src="logo.png" alt="logo"></a>
+		<form>
+			<span id="eta">Estimated Time:</span>
+			<label><input type="text" name="number" pattern="\d{1,22}" required maxlength="22" autocomplete="off"></label>
+			<span id="hint"></span>
+			<div id="loadBar"><p id="percentage">0 %</p><div id="loadStatus" class="bar"></div></div>
+			<button type="submit">
+				<p>Get the Factors!</p>
+			</button>
+			<button type="button" id="reload">
+				<p>Stop and Reload</p>
+			</button>
+		</form>
+	<div id="factors"></div>
+	</main>
+</body>
+</html>
